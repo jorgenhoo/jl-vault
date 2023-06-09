@@ -8,20 +8,46 @@ use Illuminate\Http\Request;
 class ContaController extends Controller
 {
     public function  index() {
+        return view('/welcome');
+    }
+
+    public function contas() {
         $contas = Conta::all();
-        return view('/welcome', ['contas' => $contas]);
+        return view('/contas', ['contas' => $contas]);
     }
 
     public function create (){
         return view('contas.create');
     }
 
-    public function store(Request $request){
+    public function editar (Request $request) {
+        $id = $request->id;
+        $conta =  Conta::find($id);
+        return view('contas.editar', ['conta' => $conta]);
+    }
+
+    public function delete (Request $request) {
+        $id = $request->id;
+        $conta = Conta::find($id);
+        $conta->delete();
+        return redirect('/');
+    }
+
+    public function save(Request $request){
         $conta = new Conta();
         $conta->username = $request->username;
         $conta->password = $request->password;
         $conta->title = $request->title;
         $conta->save();
+        return redirect('/');
+    }
+
+    public function update(Request $request) {
+        $conta = Conta::find($request->id);
+        $conta->username = $request->username;
+        $conta->password = $request->password;
+        $conta->title = $request->title;
+        $conta->update();
         return redirect('/');
     }
 }

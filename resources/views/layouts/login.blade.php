@@ -1,25 +1,26 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.main')
 
-    <!-- Fonte do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-
-    <!-- CSS Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <!-- CSS da aplicação -->
-    <link rel="stylesheet" href="/css/style.css">
-    <title>@yield('title')</title>
-</head>
-<body>
-    @yield('content')
-    <footer>
-        <p>JL Vault &copy; 2023</p>
-    </footer>
-</body>
-</html>
+@section('content')
+    @yield('form')
+    <h1>@yield('subtitle')</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="@yield('url')" method="post">
+            @csrf
+            <div class="title">
+                <label for="title">Title: </label>
+                <input value="@yield('conta.title')" type="text" class="form-control" id="title" name="title" placeholder="title" required>
+            </div>
+            <div class="title">
+                <label for="title">Username: </label>
+                <input value="@yield('conta.username')" type="text" class="form-control" id="username" name="username" placeholder="username" required>
+            </div>
+            <div class="title">
+                <label for="title">Password: </label>
+                <input value="@yield('conta.password')" type="password" class="form-control" id="password" name="password" placeholder="pasword" required>
+            </div>
+            <br>
+            <input value="@yield('conta.id')" type="hidden" name="id">
+            <button type="submit" class="btn btn-primary">@yield('button')</button>
+        </form>
+    </div>
+@endsection
