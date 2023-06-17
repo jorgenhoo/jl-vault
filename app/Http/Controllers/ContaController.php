@@ -39,7 +39,7 @@ class ContaController extends Controller
         $conta->password = $request->password;
         $conta->title = $request->title;
         $conta->save();
-        return redirect('/');
+        return redirect('/')->with('msg', 'Conta Criada com Sucesso!');
     }
 
     public function update(Request $request) {

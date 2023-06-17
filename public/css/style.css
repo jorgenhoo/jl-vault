@@ -3,6 +3,16 @@
     font-family: 'Roboto', serif;
 }
 
+.msg{
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
 body {
     min-height: 100vh;
     padding-bottom: 100px;
@@ -57,16 +67,6 @@ header {
     color: #F2A340;
 }
 
-/* Search Container */
-/*#search-container {
-    background-image: url("../img/banner.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    padding: 50px;
-    text-align: center;
-}*/
-
 #search-container h1 {
     color: #F2A340;
     margin-bottom: 30px;
@@ -97,11 +97,11 @@ header {
 }
 
 #contas-container .card {
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 18%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #contas-container img {
