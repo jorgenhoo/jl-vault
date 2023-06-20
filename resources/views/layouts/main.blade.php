@@ -31,7 +31,7 @@
                         <a href="/contas" class="nav-link">Contas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/contas/create" class="nav-link">Adicionar Conta</a>
+                        <a href="/contas/adicionar" class="nav-link">Adicionar Conta</a>
                     </li>
                     <li class="nav-item">
                         <a href="/contas/entrar" class="nav-link">Entrar</a>

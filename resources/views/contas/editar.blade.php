@@ -2,10 +2,11 @@
 
 @section('title', 'JL Vault')
 
+
 @section('form')@endsection
-@section('subtitle', 'Edit Account')
-@section('url', '/contas/update')
+@section('url', '/contas/put')
 @section('conta.title', $conta->title)
 @section('conta.username', $conta->username)
 @section('conta.id', $conta->id)
-@section('button', 'Edit Account')
+@section('button', 'Editar')
+@section('subtitleLogin', 'Editar Conta')

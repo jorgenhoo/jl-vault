@@ -16,24 +16,28 @@ class ContaController extends Controller
         return view('/contas', ['contas' => $contas]);
     }
 
-    public function create (){
-        return view('contas.create');
+    public function show($id) {
+        $conta = Conta::findOrFail($id);
+        return view('show', ['conta' => $conta]);
+    }
+
+    public function adicionar (){
+        return view('contas.adicionar');
     }
 
     public function editar (Request $request) {
         $id = $request->id;
-        $conta =  Conta::find($id);
+        $conta =  Conta::findOrFail($id);
         return view('contas.editar', ['conta' => $conta]);
     }
 
-    public function delete (Request $request) {
-        $id = $request->id;
-        $conta = Conta::find($id);
-        $conta->delete();
-        return redirect('/');
+
+    public function destroy ($id) {
+        Conta::findOrFail($id)->delete();
+        return redirect('/contas')->with('msg', 'Conta Exluida com Sucesso!');
     }
 
-    public function save(Request $request){
+    public function store(Request $request){
         $conta = new Conta();
         $conta->username = $request->username;
         $conta->password = $request->password;
@@ -42,12 +46,12 @@ class ContaController extends Controller
         return redirect('/')->with('msg', 'Conta Criada com Sucesso!');
     }
 
-    public function update(Request $request) {
+    public function put(Request $request) {
         $conta = Conta::find($request->id);
         $conta->username = $request->username;
         $conta->password = $request->password;
         $conta->title = $request->title;
         $conta->update();
-        return redirect('/');
+        return redirect('/contas')->with('msg', 'Conta Editada com Sucesso!');
     }
 }

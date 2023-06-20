@@ -67,53 +67,28 @@ header {
     color: #F2A340;
 }
 
-#search-container h1 {
-    color: #F2A340;
-    margin-bottom: 30px;
-    font-weight: 900;
+.contas-container form{
+    display: inline-block;
 }
 
-#search-container form {
-    width: 50%;
-    margin: 0 auto;
-}
-
-/* Events list */
 #contas-container {
     padding: 50px;
+    margin: 0 auto;
+
 }
 
-#events-container h2 {
-    margin-bottom: 10px;
-}
-
-#events-container .subtitle {
-    color: #757575;
-    margin-bottom: 30px;
-}
 
 #cards-container {
-    display: flex;
+    display: block;
 }
 
 #contas-container .card {
     flex: 1 1 24%;
-    max-width: 18%;
     border-radius: 10px;
     padding: 0;
     margin: .5%;
 }
 
-#contas-container img {
-    max-height: 150px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card .card-date {
-    font-size: 12px;
-    color: #CCC;
-}
 
 .card .card-title {
     color: #212121;
@@ -126,22 +101,18 @@ header {
     font-weight: bold;
 }
 
-
-/* Event create page */
-#event-create-container {
-    padding: 30px
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-#event-create-container label {
-    font-weight: bold;
+.dashboard-contas-container th{
+    width: 25%;
 }
 
-#event-create-container input,
-#event-create-container select,
-#event-create-container textarea {
-    font-size: 12px;
+.dashboard-contas-container form{
+    display: inline-block;
 }
-
 /* footer */
 footer {
     text-align: center;

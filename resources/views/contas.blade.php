@@ -3,24 +3,33 @@
 @section('title', 'JL Vault')
 
 @section('content')
-    <h1>Your Accounts</h1>
-    <br> <br>
-    <div id="contas-container" class="col-md-12">
-        <div id="cards-container" class="row">
-            @foreach($contas as $conta)
-                <div class="card col-md-3">
-                    <img src="/img/login.jpg" alt="{{ $conta->title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $conta->title }}</h5>
-                        <label for="title">Username: </label> {{ $conta->username }}
-                        <br>
-                        <label for="title">Password: </label> {{ $conta->password }}
-                    </div>
-                    <a href="/contas/editar?id={{$conta->id}}" class="btn btn-primary">Edit</a>
-                    <br>
-                    <a href="/contas/delete?id={{$conta->id}}" class="btn btn-primary">Delete</a>
-                </div>
-            @endforeach
-        </div>
+    <div class="col-md-10 offset-md-1 dashboard-title-container">
+        <h1>Minhas Contas</h1>
     </div>
+    <div class="col-md-10 offset-md-1 dashboard-contas-container">
+        @if(count($contas) > 0)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Usuario/Email</th>
+                        <th>Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($contas as $conta)
+                        <tr>
+                            <td>{{$conta->title}}</td>
+                            <td>{{$conta->username}}</td>
+                            <td><a href="/show/{{$conta->id}}" class="btn btn-primary">Mais detalhes</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Você ainda não tem Contas!</p>
+        @endif
+    </div>
+
 @endsection
+@section('subtitleDisplay', 'Minhas Contas')

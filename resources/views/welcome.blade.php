@@ -3,5 +3,8 @@
 @section('title', 'JL Vault')
 
 @section('content')
-    <h1>Welcome to JL Vault</h1>
+    <div class="col-md-10 offset-md-1 dashboard-title-container">
+        <h1>Bem vindo ao JL-Vault</h1>
+    </div>
 @endsection
+

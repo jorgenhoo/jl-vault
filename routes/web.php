@@ -15,8 +15,11 @@ use App\Http\Controllers\ContaController;
 
 Route::get('/', [ContaController::class, 'index']);
 Route::get('/contas', [ContaController::class, 'contas']);
-Route::get('/contas/create', [ContaController::class, 'create']);
-Route::get('/contas/editar', [ContaController::class, 'editar']);
-Route::get('contas/delete', [ContaController::class, 'delete']);
-Route::post('contas/update', [ContaController::class, 'update']);
-Route::post('/contas/save', [ContaController::class, 'save']);
+Route::get('/show/{id}', [ContaController::class, 'show']);
+Route::get('/contas/adicionar', [ContaController::class, 'adicionar']);
+Route::get('/contas/{id}', [ContaController::class, 'editar']);
+
+
+Route::delete('contas/{id}', [ContaController::class, 'destroy']);
+Route::post('contas/put', [ContaController::class, 'put']);
+Route::post('/contas/store', [ContaController::class, 'store']);
