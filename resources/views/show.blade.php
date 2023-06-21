@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'JL Vault')
+@section('title', 'Mais Informações')
 
 
 @section('content')

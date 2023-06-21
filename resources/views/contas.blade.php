@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'JL Vault')
+@section('title', 'Minhas Contas')
 
 @section('content')
     <div class="col-md-10 offset-md-1 dashboard-title-container">

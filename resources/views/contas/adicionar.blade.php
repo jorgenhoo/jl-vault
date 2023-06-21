@@ -1,9 +1,9 @@
-@extends('layouts.login')
+@extends('layouts.form')
 
-@section('title', 'JL Vault')
+@section('title', 'Adicionar Conta')
 
 @section('subtitleLogin', 'Adicionar Conta')
 @section('form')@endsection
-    @section('url', '/contas/store')
+@section('url', '/contas/store')
 @section('button', 'Adicionar')
 

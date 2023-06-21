@@ -1,6 +1,6 @@
-@extends('layouts.login')
+@extends('layouts.form')
 
-@section('title', 'JL Vault')
+@section('title', 'Editar Conta')
 
 
 @section('form')@endsection
